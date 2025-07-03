@@ -154,7 +154,7 @@ def export_conversations_to_zip(conversations: List[ExportData], zip_filename: s
                 filename = f"{export_data.category.upper()}-{timestamp_str}-{safe_title}__{export_data.convo_id[:8]}.md"
                 content = generate_markdown_content(export_data.title, export_data.category, timestamp_str, export_data.convo_id, messages)
                 zipf.writestr(filename, content)
-                print(f"✅ Saved: {filename}")
+                print(f"Saved: {filename}")
     
     return zippath
 
@@ -219,7 +219,7 @@ def get_validated_input(prompt: str, validator_func, *args, **kwargs):
         if is_valid:
             return result
         
-        print(f"❌ {result}")
+        print(f"{result}")
         print("Please try again.")
 
 # Custom exception classes
@@ -282,10 +282,10 @@ def write_convo_markdown(convo: Dict[str, Any], category: str, title: str, convo
         content = generate_markdown_content(title, category, timestamp_str, convo_id, messages)
         with open(filepath, "w", encoding="utf-8") as out:
             out.write(content)
-        print(f"✅ Saved: {os.path.basename(filepath)}")
+        print(f"Saved: {os.path.basename(filepath)}")
         return filepath
     else:
-        print("⚠️ No valid messages found to export.")
+        print("No valid messages found to export.")
         return None
 
 def main():
@@ -392,7 +392,7 @@ If no --file is provided, defaults to ./conversations.json
                     # Export using modular function
                     try:
                         export_conversations_to_zip(conversations_to_export, zipname, OUTPUT_DIR)
-                        print(f"✅ Exported {len(matched)} results to {zippath}")
+                        print(f"Exported {len(matched)} results to {zippath}")
                         raise UserExitError("Export completed successfully")
                     except UserExitError:
                         raise
@@ -518,7 +518,7 @@ If no --file is provided, defaults to ./conversations.json
             # Export using modular function
             try:
                 export_conversations_to_zip(conversations_to_export, zipname, OUTPUT_DIR)
-                print(f"✅ Exported {len(to_show)} results to {zippath}")
+                print(f"Exported {len(to_show)} results to {zippath}")
                 raise UserExitError("Export completed successfully")
             except UserExitError:
                 raise
@@ -548,25 +548,25 @@ If no --file is provided, defaults to ./conversations.json
             raise InputValidationError("Invalid input. Please enter a number or 'zip'.")
 
     except UserExitError as e:
-        print(f"✅ {e}")
+        print(f"{e}")
         return 0
     except InputValidationError as e:
-        print(f"❌ Input Error: {e}")
+        print(f"Input Error: {e}")
         return 1
     except FileOperationError as e:
-        print(f"❌ File Error: {e}")
+        print(f"File Error: {e}")
         return 1
     except ConversationProcessingError as e:
-        print(f"❌ Processing Error: {e}")
+        print(f"Processing Error: {e}")
         return 1
     except ExportError as e:
-        print(f"❌ Export Error: {e}")
+        print(f"Export Error: {e}")
         return 1
     except KeyboardInterrupt:
-        print("\n\n⚠️ Operation cancelled by user.")
+        print("\n\nOperation cancelled by user.")
         return 1
     except Exception as e:
-        print(f"❌ Unexpected Error: {e}")
+        print(f"Unexpected Error: {e}")
         return 1
 
 if __name__ == "__main__":

@@ -200,14 +200,21 @@ MIT License - see the script header for full license text.
 
 This script is designed to be self-contained and easy to use. If you find bugs or have feature requests, please open an issue on the repository.
 
+## Roadmap
+
+Planned features for upcoming releases:
+
+- [ ] Include sample data for immediate testing out of the box
+- [ ] Implement unit tests for core functionality
+
 ## Version History
 
-- **v1.0.0**: Initial release with basic extraction functionality
-- **v1.1.0**: Added fuzzy search and batch export
-- **v1.2.0**: Improved error handling and user interface
-- **v1.3.0**: Added metadata indexing for performance optimization
 - **v1.3.1**: Implemented lazy loading for better performance
+- **v1.3.0**: Added metadata indexing for performance optimization
+- **v1.2.0**: Improved error handling and user interface
+- **v1.1.0**: Added fuzzy search and batch export
+- **v1.0.0**: Initial release with basic extraction functionality
 
 ---
 
-**Note**: This script processes your personal ChatGPT export data. Ensure you have the right to export and process this data according to OpenAI's terms of service. 
+**Note**: This script processes your personal ChatGPT export data which may contain sensitive or private conversations.
