@@ -2,6 +2,9 @@
 
 A Python script to extract, filter, and archive ChatGPT conversations from OpenAI data exports. This tool provides an interactive interface to browse, search, and export your ChatGPT conversations to markdown files or zip archives.
 
+## Blog
+[Fine-Tuning GPT on My Voice](https://0xsalt.github.io/posts/train_gpt_to_write/)
+
 ## Features
 
 - **Interactive Menu System**: Browse conversations by category (Project, GPT, Plain)
