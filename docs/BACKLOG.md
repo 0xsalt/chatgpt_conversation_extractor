@@ -14,8 +14,8 @@
 
 ## BACKLOG
 
-- [ ] #002 Add unit tests for core functions (extract, classify, export) #testing
-- [ ] #004 Verify OpenAI export format compatibility with latest ChatGPT exports #testing
+- [ ] #002 Add unit tests for core functions (extract, classify, export) #testing #RM2
+- [ ] #004 Verify OpenAI export format compatibility with latest ChatGPT exports #testing #RM2
 
 ## ROADMAP
 

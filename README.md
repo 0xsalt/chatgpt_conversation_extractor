@@ -216,11 +216,6 @@ MIT License - see the script header for full license text.
 
 This script is designed to be self-contained and easy to use. If you find bugs or have feature requests, please open an issue on the repository.
 
-## Roadmap
-
-- [x] Include sample data for immediate testing out of the box
-- [ ] Implement unit tests for core functionality
-
 ---
 
 **Note**: This script processes your personal ChatGPT export data which may contain sensitive or private conversations.
