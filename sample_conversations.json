@@ -1,0 +1,257 @@
+[
+  {
+    "title": "Building a Recipe Organizer App",
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "gizmo_id": null,
+    "memory_scope": "project_enabled",
+    "create_time": 1706400000.0,
+    "mapping": {
+      "root-node-001": {
+        "id": "root-node-001",
+        "message": null,
+        "parent": null,
+        "children": ["msg-node-001"]
+      },
+      "msg-node-001": {
+        "id": "msg-node-001",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["I want to build a simple recipe organizer app in Python. It should let me add recipes with ingredients and steps, search by ingredient, and export to markdown. What's a good architecture for this?"]}
+        },
+        "parent": "root-node-001",
+        "children": ["msg-node-002"]
+      },
+      "msg-node-002": {
+        "id": "msg-node-002",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["Great project idea! Here's a clean architecture for a recipe organizer:\n\n1. **Data Layer**: Use a JSON file for storage. Each recipe is a dict with `name`, `ingredients` (list), `steps` (list), and `tags`.\n\n2. **Core Module** (`recipes.py`):\n   - `add_recipe(name, ingredients, steps)` \n   - `search_by_ingredient(ingredient)` \n   - `export_to_markdown(recipe)` \n\n3. **CLI Interface**: Use `argparse` for commands like `add`, `search`, `export`, `list`.\n\nThis keeps it simple with no external dependencies. Want me to start with the data layer?"]}
+        },
+        "parent": "msg-node-001",
+        "children": ["msg-node-003"]
+      },
+      "msg-node-003": {
+        "id": "msg-node-003",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["Yes, start with the data layer. I want each recipe stored as a dictionary and the whole collection saved to a recipes.json file."]}
+        },
+        "parent": "msg-node-002",
+        "children": ["msg-node-004"]
+      },
+      "msg-node-004": {
+        "id": "msg-node-004",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["Here's the data layer:\n\n```python\nimport json\nimport os\n\nRECIPES_FILE = 'recipes.json'\n\ndef load_recipes():\n    if os.path.exists(RECIPES_FILE):\n        with open(RECIPES_FILE, 'r') as f:\n            return json.load(f)\n    return []\n\ndef save_recipes(recipes):\n    with open(RECIPES_FILE, 'w') as f:\n        json.dump(recipes, f, indent=2)\n\ndef add_recipe(name, ingredients, steps, tags=None):\n    recipes = load_recipes()\n    recipe = {\n        'name': name,\n        'ingredients': ingredients,\n        'steps': steps,\n        'tags': tags or []\n    }\n    recipes.append(recipe)\n    save_recipes(recipes)\n    return recipe\n```\n\nThis gives you persistent storage with a clean interface. The `load_recipes` function handles the case where the file doesn't exist yet."]}
+        },
+        "parent": "msg-node-003",
+        "children": []
+      }
+    }
+  },
+  {
+    "title": "Brainstorming Short Story Ideas",
+    "id": "b2c3d4e5-f6a7-8901-bcde-f23456789012",
+    "gizmo_id": "g-xK9mT2vL4wN8pQ",
+    "memory_scope": "",
+    "create_time": 1706486400.0,
+    "mapping": {
+      "root-node-010": {
+        "id": "root-node-010",
+        "message": null,
+        "parent": null,
+        "children": ["msg-node-010"]
+      },
+      "msg-node-010": {
+        "id": "msg-node-010",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["I need three short story ideas that blend science fiction with everyday life. Nothing too far-fetched — more like speculative fiction grounded in reality."]}
+        },
+        "parent": "root-node-010",
+        "children": ["msg-node-011"]
+      },
+      "msg-node-011": {
+        "id": "msg-node-011",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["Here are three grounded sci-fi story ideas:\n\n**1. \"The Commute\"**\nA software engineer discovers her noise-canceling headphones are picking up conversations from a parallel timeline. The other version of her life made different choices — different job, different city. She starts commuting just to listen.\n\n**2. \"Shelf Life\"**\nA grocery store worker notices that one brand of canned soup never expires. Not \"long shelf life\" — literally never. He tracks the supply chain back to a factory that doesn't appear on any map.\n\n**3. \"Read Receipts\"**\nA woman keeps getting text replies from her late grandmother's phone number. Not spam — specific, contextual responses to things only her grandmother would know. She has to decide whether to keep the conversation going or let go.\n\nEach of these starts in a mundane setting and introduces one impossible element. Which resonates most?"]}
+        },
+        "parent": "msg-node-010",
+        "children": ["msg-node-012"]
+      },
+      "msg-node-012": {
+        "id": "msg-node-012",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["I love \"Read Receipts.\" Can you help me outline the first three scenes?"]}
+        },
+        "parent": "msg-node-011",
+        "children": ["msg-node-013"]
+      },
+      "msg-node-013": {
+        "id": "msg-node-013",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["**Scene 1: The First Message**\nMara is cleaning out her grandmother's apartment three weeks after the funeral. She texts the wrong number by habit — \"Running late, be there in 10\" — to her grandmother's phone sitting on the kitchen counter. The phone buzzes. The reply: \"Take your time, honey. I'm not going anywhere.\" Mara stares at both phones. Nobody else is in the apartment.\n\n**Scene 2: Testing**\nMara spends the next day sending careful messages. She asks questions only her grandmother would know — the name of their dog when Mara was six, the secret ingredient in her cornbread. Every answer is correct. Mara's hands shake as she types: \"Grandma, is this really you?\" The reply takes longer this time: \"I'm not sure what I am. But I remember you.\"\n\n**Scene 3: The Bargain**\nMara tells her sister, who reacts with anger — \"This is sick, someone is messing with you.\" But the sister sends a test question too. When the answer comes back right, the room goes silent. They agree: keep it secret, keep talking. But Mara notices something — each conversation costs the phone one percent of battery, and it's at thirty-four percent with no charger that fits."]}
+        },
+        "parent": "msg-node-012",
+        "children": []
+      }
+    }
+  },
+  {
+    "title": "How Does Sourdough Starter Work",
+    "id": "c3d4e5f6-a7b8-9012-cdef-345678901234",
+    "gizmo_id": null,
+    "memory_scope": "",
+    "create_time": 1706572800.0,
+    "mapping": {
+      "root-node-020": {
+        "id": "root-node-020",
+        "message": null,
+        "parent": null,
+        "children": ["msg-node-020"]
+      },
+      "msg-node-020": {
+        "id": "msg-node-020",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["Can you explain how sourdough starter works? I've been feeding mine for a week and it's barely rising."]}
+        },
+        "parent": "root-node-020",
+        "children": ["msg-node-021"]
+      },
+      "msg-node-021": {
+        "id": "msg-node-021",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["A sourdough starter is a symbiotic culture of wild yeast and lactic acid bacteria. Here's what's happening in your jar:\n\n**Days 1-3**: Leuconostoc bacteria dominate first. They produce CO2 (bubbles!) but die off as acidity rises. This early activity can be misleading — it's not the yeast you want yet.\n\n**Days 4-7**: Lactobacillus bacteria take over and create the acidic environment that wild yeast (Saccharomyces) needs to thrive. During this transition, activity often slows — which is exactly where you are.\n\n**Days 7-14**: The yeast population builds. You'll see consistent doubling within 4-8 hours of feeding.\n\n**Tips for your sluggish starter:**\n- Feed at consistent 12-hour intervals\n- Use a 1:1:1 ratio (starter:flour:water by weight)\n- Keep it at 75-80°F if possible — cooler temps slow everything down\n- Whole wheat or rye flour gives more nutrients than white flour\n\nBe patient — week two is usually when things take off."]}
+        },
+        "parent": "msg-node-020",
+        "children": ["msg-node-022"]
+      },
+      "msg-node-022": {
+        "id": "msg-node-022",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["That's really helpful. I think the temperature is the issue — my kitchen is around 65°F. Should I just move it somewhere warmer?"]}
+        },
+        "parent": "msg-node-021",
+        "children": ["msg-node-023"]
+      },
+      "msg-node-023": {
+        "id": "msg-node-023",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["Yes, 65°F is definitely on the slow side. A few options:\n\n1. **Oven with light on**: Most oven lights create a stable 78-80°F environment. Just put a sticky note on the oven so nobody preheats it.\n2. **On top of the fridge**: The motor generates gentle warmth, usually 72-75°F.\n3. **Microwave (off)**: Put a mug of hot water next to the jar. Replace the water every few hours.\n\nThe oven-light method is the most reliable. You should see a noticeable difference within 24-48 hours of the temperature change."]}
+        },
+        "parent": "msg-node-022",
+        "children": []
+      }
+    }
+  },
+  {
+    "title": "Task Manager API Design",
+    "id": "d4e5f6a7-b8c9-0123-defa-456789012345",
+    "gizmo_id": null,
+    "memory_scope": "project_enabled",
+    "create_time": 1706659200.0,
+    "mapping": {
+      "root-node-030": {
+        "id": "root-node-030",
+        "message": null,
+        "parent": null,
+        "children": ["msg-node-030"]
+      },
+      "msg-node-030": {
+        "id": "msg-node-030",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["I'm designing a REST API for a task manager. Each task has a title, description, status (todo/in_progress/done), priority (low/medium/high), and due date. What endpoints should I have?"]}
+        },
+        "parent": "root-node-030",
+        "children": ["msg-node-031"]
+      },
+      "msg-node-031": {
+        "id": "msg-node-031",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["Here's a clean REST API design for your task manager:\n\n```\nGET    /tasks              # List all tasks (supports ?status=todo&priority=high)\nPOST   /tasks              # Create a new task\nGET    /tasks/:id           # Get a specific task\nPUT    /tasks/:id           # Update a task\nDELETE /tasks/:id           # Delete a task\nPATCH  /tasks/:id/status    # Update just the status\n```\n\n**Request body for POST /tasks:**\n```json\n{\n  \"title\": \"Review pull request\",\n  \"description\": \"Review the auth module PR from Sarah\",\n  \"priority\": \"high\",\n  \"due_date\": \"2024-02-15\"\n}\n```\n\n**Response:**\n```json\n{\n  \"id\": \"task_01H8X...\",\n  \"title\": \"Review pull request\",\n  \"status\": \"todo\",\n  \"priority\": \"high\",\n  \"due_date\": \"2024-02-15\",\n  \"created_at\": \"2024-01-30T10:00:00Z\"\n}\n```\n\nThe separate PATCH endpoint for status is useful because status changes happen far more often than full updates."]}
+        },
+        "parent": "msg-node-030",
+        "children": ["msg-node-032"]
+      },
+      "msg-node-032": {
+        "id": "msg-node-032",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["Nice. Should I add filtering by due date too? Like getting all tasks due this week?"]}
+        },
+        "parent": "msg-node-031",
+        "children": ["msg-node-033"]
+      },
+      "msg-node-033": {
+        "id": "msg-node-033",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["Absolutely. Add date range filtering to your GET /tasks endpoint:\n\n```\nGET /tasks?due_before=2024-02-07&due_after=2024-02-01\n```\n\nYou could also add a convenience parameter:\n\n```\nGET /tasks?due=this_week\nGET /tasks?due=overdue\nGET /tasks?due=today\n```\n\nThis translates the convenience values into date ranges server-side. Combine with existing filters:\n\n```\nGET /tasks?due=this_week&status=todo&priority=high\n```\n\nThat gives you \"high-priority todo items due this week\" in one call — exactly the query you'll run most often."]}
+        },
+        "parent": "msg-node-032",
+        "children": []
+      }
+    }
+  },
+  {
+    "title": "Explain the Monty Hall Problem",
+    "id": "e5f6a7b8-c9d0-1234-efab-567890123456",
+    "gizmo_id": null,
+    "memory_scope": "",
+    "create_time": 1706745600.0,
+    "mapping": {
+      "root-node-040": {
+        "id": "root-node-040",
+        "message": null,
+        "parent": null,
+        "children": ["msg-node-040"]
+      },
+      "msg-node-040": {
+        "id": "msg-node-040",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["I've heard about the Monty Hall problem but I don't understand why you should switch doors. Can you explain it simply?"]}
+        },
+        "parent": "root-node-040",
+        "children": ["msg-node-041"]
+      },
+      "msg-node-041": {
+        "id": "msg-node-041",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["The Monty Hall problem trips up almost everyone at first. Here's the setup and why switching works:\n\n**The Game:**\n- 3 doors. One has a car, two have goats.\n- You pick a door (say Door 1).\n- The host (who knows what's behind each door) opens another door showing a goat (say Door 3).\n- You choose: stick with Door 1 or switch to Door 2?\n\n**Why switching wins 2/3 of the time:**\n\nWhen you first picked, you had a 1/3 chance of being right and a 2/3 chance of being wrong.\n\nThe host opening a door doesn't change your original odds. Your door is still 1/3. But now all of the remaining 2/3 probability is concentrated on the one unopened door.\n\n**Think of it with 100 doors:**\nPick 1 door out of 100. The host opens 98 doors showing goats. Would you switch to the one remaining door? Of course — your original pick was almost certainly wrong (99/100), and the host just showed you where the car probably is.\n\nThe 3-door version works the same way, just with less dramatic numbers: 1/3 vs 2/3."]}
+        },
+        "parent": "msg-node-040",
+        "children": ["msg-node-042"]
+      },
+      "msg-node-042": {
+        "id": "msg-node-042",
+        "message": {
+          "author": {"role": "user"},
+          "content": {"parts": ["The 100 doors analogy makes it click. So the key insight is that the host's action gives you information but doesn't change your original probability?"]}
+        },
+        "parent": "msg-node-041",
+        "children": ["msg-node-043"]
+      },
+      "msg-node-043": {
+        "id": "msg-node-043",
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {"parts": ["Exactly right. The host's action is constrained — he must open a door with a goat and he can never open your door. This constraint is what makes the information valuable.\n\nIf the host opened a door at random (and might accidentally reveal the car), then switching wouldn't help — it would be 50/50. The magic is that the host *knows* and *must avoid the car*. His forced choice funnels the probability.\n\nThis is why it's counterintuitive: we naturally think \"two doors left, 50/50.\" But that ignores the information embedded in the host's constrained choice."]}
+        },
+        "parent": "msg-node-042",
+        "children": []
+      }
+    }
+  }
+]

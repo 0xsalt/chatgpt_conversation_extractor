@@ -14,9 +14,7 @@
 
 ## BACKLOG
 
-- [ ] #001 Include sample conversations.json for out-of-box testing #feature
 - [ ] #002 Add unit tests for core functions (extract, classify, export) #testing
-- [ ] #003 Add git version tags for existing releases (v1.0.0 through v1.3.1) #chore
 - [ ] #004 Verify OpenAI export format compatibility with latest ChatGPT exports #testing
 
 ## ROADMAP
@@ -26,6 +24,9 @@
 
 ## DONE
 
+- [x] #001 Include sample conversations.json for out-of-box testing #feature _done:2026-03-11
+- [x] #003 Add git version tags for existing releases (v1.0.0, v1.3.1) #chore _done:2026-03-10
+
 ---
 
-*Last updated: 2026-03-10*
+*Last updated: 2026-03-11*

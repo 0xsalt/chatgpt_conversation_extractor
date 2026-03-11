@@ -31,8 +31,11 @@ A Python script to extract, filter, and archive ChatGPT conversations from OpenA
    ```bash
    pip install -r requirements.txt
    ```
-3. Place your `conversations.json` file in the same directory
-4. Run the script:
+3. Try it immediately with the included sample data:
+   ```bash
+   python extract_gpt_conversations.py --file sample_conversations.json
+   ```
+4. Or use your own ChatGPT export — place your `conversations.json` file in the same directory and run:
    ```bash
    python extract_gpt_conversations.py
    ```
@@ -215,9 +218,7 @@ This script is designed to be self-contained and easy to use. If you find bugs o
 
 ## Roadmap
 
-Planned features for upcoming releases:
-
-- [ ] Include sample data for immediate testing out of the box
+- [x] Include sample data for immediate testing out of the box
 - [ ] Implement unit tests for core functionality
 
 ---
