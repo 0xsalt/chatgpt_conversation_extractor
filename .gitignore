@@ -29,6 +29,7 @@ output_conversations/
 conversations.json
 
 # Private working docs
+docs/BRIEF.md
 docs/internal/
 .private-journal/
 .conductor/
