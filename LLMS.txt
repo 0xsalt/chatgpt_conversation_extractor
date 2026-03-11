@@ -1,0 +1,42 @@
+# ChatGPT Conversation Extractor
+
+> Extract and archive ChatGPT conversations to searchable markdown files
+
+## Project Metadata
+
+- Language: python
+- Tier: 2 (detailed profile)
+- Lifecycle: stable
+- Disposition: publish
+- Visibility: public
+- Last Commit: 2025-07-07
+- Last Assessed: 2026-03-10
+- Tags: python, chatgpt, data-export, cli, markdown, osint
+
+## Identity
+
+- **Problem Statement**: ChatGPT data exports produce an opaque JSON blob. This tool makes conversations browsable, searchable, and exportable as markdown.
+- **Target User**: Anyone who exports ChatGPT data and wants readable, organized conversation archives.
+- **Origin Story**: Built to organize conversation history for fine-tuning GPT on personal writing voice.
+
+## Technical Profile
+
+- **Stack**: Python 3.6+ (standard library only)
+- **Architecture**: Single-file CLI. Interactive menu with automatic classification (Project/GPT/Plain). Exports to markdown with YAML frontmatter or zip archives.
+- **Dependencies**: None (Python standard library only)
+- **Maturity**: Production
+
+## Current State
+
+- **Last Active**: 2025-07-07
+- **Known Issues**: None reported
+- **Missing Features**:
+  - Sample data for out-of-box testing
+  - Unit tests for core functionality
+- **Technical Debt**:
+  - MetadataIndex implementation could be more complete
+
+---
+
+Use this context to discuss features, architecture, bugs, or next steps for this project.
+Source: projects-catalog brief (tier 2)

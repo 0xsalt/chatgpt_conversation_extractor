@@ -1,5 +1,9 @@
 # ChatGPT Conversation Extractor
 
+[![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.6%2B-yellow.svg)](https://www.python.org/)
+
 A Python script to extract, filter, and archive ChatGPT conversations from OpenAI data exports. This tool provides an interactive interface to browse, search, and export your ChatGPT conversations to markdown files or zip archives.
 
 ## Blog
@@ -174,30 +178,32 @@ your-directory/
 - The script automatically creates metadata cache for better performance
 - First run may be slower, subsequent runs will be faster
 
-### Error Handling
-The script includes comprehensive error handling for:
-- File operations
-- JSON parsing
-- User input validation
-- Export operations
-
 ## Technical Details
 
 ### Dependencies
 - **Python Standard Library Only**: No external packages required
-- **Python 3.6+**: Uses modern Python features like dataclasses and type hints
-
-### Architecture
-- **Modular Design**: Separated concerns for maintainability
-- **Type Safety**: Full type annotations for reliability
-- **Error Handling**: Comprehensive exception management
-- **Performance Optimization**: Metadata caching and lazy loading
+- **Python 3.6+**: Uses dataclasses and type hints
 
 ### Data Structures
 - `MessageData`: Individual message representation
 - `ConversationData`: Conversation metadata
 - `ExportData`: Export operation data
 - `MetadataIndex`: Performance optimization cache
+
+## Using with Claude (or Other AI Assistants)
+
+This project includes a `CLAUDE.md` file that gives AI assistants full context about how the tool works, what it expects, and how to help you use it.
+
+If you're working with Claude Code or any Claude-based tool:
+1. Clone this repo
+2. Claude will automatically read `CLAUDE.md` for project context
+3. Ask Claude to help you run the extractor, troubleshoot issues, or explore your exported conversations
+
+The `CLAUDE.md` file covers:
+- How to run the script and what input it expects
+- How to guide users through ChatGPT's data export process
+- Output format and file naming conventions
+- Core functions for programmatic integration
 
 ## License
 
@@ -213,14 +219,6 @@ Planned features for upcoming releases:
 
 - [ ] Include sample data for immediate testing out of the box
 - [ ] Implement unit tests for core functionality
-
-## Version History
-
-- **v1.3.1**: Implemented lazy loading for better performance
-- **v1.3.0**: Added metadata indexing for performance optimization
-- **v1.2.0**: Improved error handling and user interface
-- **v1.1.0**: Added fuzzy search and batch export
-- **v1.0.0**: Initial release with basic extraction functionality
 
 ---
 
